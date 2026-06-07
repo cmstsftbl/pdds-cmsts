@@ -325,7 +325,7 @@
             </div>
 
             <div class="field">
-                <label>Foto de referencia <span class="opt">(opcional)</span></label>
+                <label>Foto de referencia <span class="req">*</span></label>
                 <div class="upload-area" id="uploadArea">
                     <input type="file" id="photoInput" accept="image/*">
                     <div class="upload-placeholder" id="uploadPlaceholder">
@@ -668,6 +668,7 @@ document.getElementById('orderForm').addEventListener('submit', function (e) {
     if (size === 'Otra' && !sizeOther)   missing.push('talla personalizada');
     if (!buyerName)                      missing.push('tu nombre');
     if (!buyerPhone)                     missing.push('tu teléfono');
+    if (!photoInput.files[0])            missing.push('foto de referencia');
 
     if (missing.length > 0) {
         formErrorEl.textContent = `Faltan campos obligatorios: ${missing.join(', ')}.`;
