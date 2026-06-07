@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido de Camiseta</title>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -346,15 +345,10 @@
 </div>
 
 <script>
-// ─── CONFIGURACIÓN EMAILJS ─────────────────────────────────────────────────
-// Reemplaza estos tres valores con los tuyos de EmailJS:
-const EMAILJS_PUBLIC_KEY  = 'qXPxOi6C228GSLM_y';
-const EMAILJS_SERVICE_ID  = 'service_s2xmhan';
-const EMAILJS_TEMPLATE_ID = 'template_745lsm9';
-const DEST_EMAIL          = 'CamistsFtbl@gmail.com';
+// ─── CONFIGURACIÓN TELEGRAM ───────────────────────────────────────────────
+const TELEGRAM_TOKEN   = '8942529854:AAHVxlXK0HnU9RsZcpsvOOkMm0pzU0-gPtQ';
+const TELEGRAM_CHAT_ID = '5226783191';
 // ──────────────────────────────────────────────────────────────────────────
-
-emailjs.init(EMAILJS_PUBLIC_KEY);
 
 // ─── DATOS ────────────────────────────────────────────────────────────────
 function clubSeasons() {
@@ -561,33 +555,50 @@ document.getElementById('orderForm').addEventListener('submit', function (e) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando…';
 
-    const params = {
-        to_email:      DEST_EMAIL,
-        competition:   comp,
-        team:          finalTeam,
-        season:        season,
-        color:         color,
-        size:          finalSize,
-        patch:         patchValue,
-        patch_desc:    patchValue === 'Sí' ? patchDesc : '—',
-        player_name:   playerName,
-        player_number: playerNumber,
-        buyer_name:    buyerName,
-        buyer_phone:   buyerPhone,
-    };
+    const mensaje =
+`<b>NUEVO PEDIDO DE CAMISETA</b>
 
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
-        .then(function () {
+<b>CAMISETA</b>
+Competición: ${comp}
+Equipo: ${finalTeam}
+Temporada: ${season}
+Color: ${color}
+
+<b>PERSONALIZACIÓN</b>
+Talla: ${finalSize}
+Parche: ${patchValue}${patchValue === 'Sí' ? '\nDesc. parche: ' + patchDesc : ''}
+Nombre en camiseta: ${playerName}
+Número en camiseta: ${playerNumber}
+
+<b>COMPRADOR</b>
+Nombre: ${buyerName}
+Teléfono: ${buyerPhone}`;
+
+    fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: mensaje,
+            parse_mode: 'HTML'
+        })
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.ok) {
             document.getElementById('formView').style.display = 'none';
             document.getElementById('successView').style.display = 'block';
-        })
-        .catch(function (err) {
-            console.error(err);
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Enviar pedido';
-            formErrorEl.textContent = 'Error al enviar el formulario. Por favor, inténtalo de nuevo.';
-            formErrorEl.style.display = 'block';
-        });
+        } else {
+            throw new Error(data.description);
+        }
+    })
+    .catch(function (err) {
+        console.error(err);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar pedido';
+        formErrorEl.textContent = 'Error al enviar el formulario. Por favor, inténtalo de nuevo.';
+        formErrorEl.style.display = 'block';
+    });
 });
 </script>
 </body>
