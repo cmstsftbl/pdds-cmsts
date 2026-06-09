@@ -21,392 +21,184 @@
             background: #fff;
             border-radius: 14px;
             padding: 40px 44px;
-            max-width: 620px;
+            max-width: 640px;
             width: 100%;
             box-shadow: 0 4px 24px rgba(0,0,0,0.07);
         }
 
-        .form-title {
-            font-size: 26px;
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 6px;
-        }
-
-        .form-subtitle {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 36px;
-        }
+        .form-title { font-size: 26px; font-weight: 700; color: #111; margin-bottom: 6px; }
+        .form-subtitle { font-size: 14px; color: #888; margin-bottom: 32px; }
 
         .section-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #aaa;
-            margin-bottom: 20px;
-            margin-top: 32px;
+            font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; color: #aaa; margin-bottom: 20px; margin-top: 32px;
         }
 
-        .field {
-            margin-bottom: 20px;
-        }
+        .field { margin-bottom: 20px; }
 
-        label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            color: #222;
-            margin-bottom: 7px;
-        }
-
+        label { display: block; font-size: 14px; font-weight: 600; color: #222; margin-bottom: 7px; }
         .req { color: #e53935; margin-left: 3px; }
         .opt { font-size: 12px; font-weight: 400; color: #aaa; margin-left: 6px; }
 
         select, input[type="text"], input[type="tel"], input[type="number"] {
-            width: 100%;
-            padding: 11px 14px;
-            border: 1.5px solid #dde1e7;
-            border-radius: 8px;
-            font-size: 15px;
-            color: #111;
-            background: #fff;
+            width: 100%; padding: 11px 14px; border: 1.5px solid #dde1e7;
+            border-radius: 8px; font-size: 15px; color: #111; background: #fff;
             transition: border-color 0.18s, box-shadow 0.18s;
-            -webkit-appearance: none;
-            appearance: none;
+            -webkit-appearance: none; appearance: none;
         }
 
         select {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 14px center;
-            padding-right: 40px;
-            cursor: pointer;
+            background-repeat: no-repeat; background-position: right 14px center;
+            padding-right: 40px; cursor: pointer;
         }
 
         select:focus, input:focus {
-            outline: none;
-            border-color: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+            outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
         }
 
-        select:disabled {
-            background-color: #f7f8fa;
-            color: #bbb;
-            cursor: not-allowed;
+        select:disabled { background-color: #f7f8fa; color: #bbb; cursor: not-allowed; }
+
+        .hidden { display: none !important; }
+
+        .radio-row { display: flex; gap: 20px; margin-top: 4px; }
+        .radio-opt { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 15px; color: #222; font-weight: 400; }
+        .radio-opt input[type="radio"] { width: 17px; height: 17px; accent-color: #2563eb; cursor: pointer; }
+
+        /* ── Bloque de camiseta ── */
+        .shirt-block {
+            background: #f8f9fb;
+            border: 1.5px solid #e8eaed;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
         }
 
-        .hidden { display: none; }
-
-        .radio-row {
-            display: flex;
-            gap: 20px;
-            margin-top: 4px;
-        }
-
-        .radio-opt {
+        .shirt-header {
             display: flex;
             align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            color: #222;
-            font-weight: 400;
+            justify-content: space-between;
+            margin-bottom: 22px;
         }
 
-        .radio-opt input[type="radio"] {
-            width: 17px;
-            height: 17px;
-            accent-color: #2563eb;
-            cursor: pointer;
+        .shirt-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
         }
 
-        .divider {
-            border: none;
-            border-top: 1px solid #eef0f3;
-            margin: 30px 0 0;
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 14px;
-            background: #111;
-            color: #fff;
-            border: none;
-            border-radius: 9px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.18s, transform 0.1s;
-            margin-top: 10px;
-            letter-spacing: 0.01em;
-        }
-
-        .btn-submit:hover:not(:disabled) { background: #2563eb; }
-        .btn-submit:active:not(:disabled) { transform: scale(0.99); }
-        .btn-submit:disabled { background: #ccc; cursor: not-allowed; }
-
-        .form-error {
-            background: #fff5f5;
-            border: 1px solid #fed7d7;
-            color: #c53030;
-            border-radius: 8px;
-            padding: 12px 14px;
+        .btn-remove-shirt {
+            background: none;
+            border: 1.5px solid #e53935;
+            color: #e53935;
+            border-radius: 7px;
+            padding: 5px 12px;
             font-size: 13px;
-            margin-top: 16px;
-            display: none;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
         }
 
+        .btn-remove-shirt:hover { background: #e53935; color: #fff; }
+
+        /* ── Upload ── */
         .upload-area {
-            border: 2px dashed #dde1e7;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: border-color 0.2s, background 0.2s;
-            overflow: hidden;
-            position: relative;
+            border: 2px dashed #dde1e7; border-radius: 8px;
+            cursor: pointer; transition: border-color 0.2s, background 0.2s;
+            overflow: hidden; position: relative; background: #fff;
         }
 
         .upload-area:hover { border-color: #2563eb; background: #f8faff; }
 
         .upload-area input[type="file"] {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            cursor: pointer;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
+            position: absolute; inset: 0; opacity: 0; cursor: pointer;
+            width: 100%; height: 100%; z-index: 2;
         }
 
-        .upload-placeholder {
-            padding: 28px 20px;
-            text-align: center;
-            pointer-events: none;
-        }
-
-        .upload-placeholder svg {
-            width: 36px;
-            height: 36px;
-            stroke: #bbb;
-            margin-bottom: 10px;
-        }
-
+        .upload-placeholder { padding: 28px 20px; text-align: center; pointer-events: none; }
+        .upload-placeholder svg { width: 36px; height: 36px; stroke: #bbb; margin-bottom: 10px; }
         .upload-placeholder p { font-size: 14px; color: #888; }
         .upload-placeholder .upload-hint { font-size: 12px; color: #bbb; margin-top: 4px; }
 
         .upload-preview { padding: 12px; }
+        .upload-preview img { width: 100%; max-height: 200px; object-fit: contain; border-radius: 6px; display: block; }
 
-        .upload-preview img {
-            width: 100%;
-            max-height: 220px;
-            object-fit: contain;
-            border-radius: 6px;
-            display: block;
-        }
-
-        .btn-remove {
-            display: block;
-            width: 100%;
-            margin-top: 10px;
-            padding: 8px;
-            background: none;
-            border: 1.5px solid #dde1e7;
-            border-radius: 6px;
-            color: #888;
-            font-size: 13px;
-            cursor: pointer;
-            position: relative;
-            z-index: 3;
+        .btn-remove-photo {
+            display: block; width: 100%; margin-top: 10px; padding: 8px;
+            background: none; border: 1.5px solid #dde1e7; border-radius: 6px;
+            color: #888; font-size: 13px; cursor: pointer; position: relative; z-index: 3;
             transition: border-color 0.2s, color 0.2s;
         }
+        .btn-remove-photo:hover { border-color: #e53935; color: #e53935; }
 
-        .btn-remove:hover { border-color: #e53935; color: #e53935; }
+        /* ── Botón añadir camiseta ── */
+        .btn-add-shirt {
+            width: 100%; padding: 13px; background: #fff; color: #2563eb;
+            border: 2px dashed #2563eb; border-radius: 9px; font-size: 15px;
+            font-weight: 600; cursor: pointer; transition: background 0.18s;
+            margin-bottom: 8px; letter-spacing: 0.01em;
+        }
+        .btn-add-shirt:hover { background: #eff6ff; }
 
-        .success-view {
-            text-align: center;
-            padding: 48px 24px;
-            display: none;
+        .divider { border: none; border-top: 1px solid #eef0f3; margin: 28px 0 0; }
+
+        /* ── Submit ── */
+        .btn-submit {
+            width: 100%; padding: 14px; background: #111; color: #fff; border: none;
+            border-radius: 9px; font-size: 16px; font-weight: 600; cursor: pointer;
+            transition: background 0.18s; margin-top: 10px; letter-spacing: 0.01em;
+        }
+        .btn-submit:hover:not(:disabled) { background: #2563eb; }
+        .btn-submit:disabled { background: #ccc; cursor: not-allowed; }
+
+        /* ── Errores ── */
+        .form-error {
+            background: #fff5f5; border: 1px solid #fed7d7; color: #c53030;
+            border-radius: 8px; padding: 14px 16px; font-size: 13px;
+            margin-top: 16px; display: none; line-height: 1.8;
         }
 
+        /* ── Éxito ── */
+        .success-view { text-align: center; padding: 48px 24px; display: none; }
         .success-icon {
-            width: 72px;
-            height: 72px;
-            background: #dcfce7;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
+            width: 72px; height: 72px; background: #dcfce7; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;
         }
-
-        .success-icon svg {
-            width: 36px;
-            height: 36px;
-            stroke: #16a34a;
-        }
-
-        .success-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 10px;
-        }
-
-        .success-text {
-            font-size: 15px;
-            color: #777;
-            line-height: 1.5;
-        }
+        .success-icon svg { width: 36px; height: 36px; stroke: #16a34a; }
+        .success-title { font-size: 22px; font-weight: 700; color: #111; margin-bottom: 10px; }
+        .success-text { font-size: 15px; color: #777; line-height: 1.5; }
 
         @media (max-width: 520px) {
-            .card { padding: 28px 20px; }
+            .card { padding: 24px 16px; }
             .form-title { font-size: 22px; }
+            .shirt-block { padding: 18px 14px; }
         }
     </style>
 </head>
 <body>
 <div class="card">
 
-    <!-- FORMULARIO -->
     <div id="formView">
         <h1 class="form-title">Pedido de Camiseta</h1>
         <p class="form-subtitle">Los campos marcados con <span style="color:#e53935">*</span> son obligatorios.</p>
 
         <form id="orderForm" novalidate>
+            <div id="shirtsContainer"></div>
 
-            <!-- ── CAMISETA ── -->
-            <p class="section-label">Camiseta</p>
-
-            <div class="field">
-                <label for="competition">Competición <span class="req">*</span></label>
-                <select id="competition" required>
-                    <option value="">Selecciona una competición</option>
-                    <option value="La Liga">La Liga (España)</option>
-                    <option value="Premier League">Premier League (Inglaterra)</option>
-                    <option value="Serie A">Serie A (Italia)</option>
-                    <option value="Bundesliga">Bundesliga (Alemania)</option>
-                    <option value="Ligue 1">Ligue 1 (Francia)</option>
-                    <option value="Champions League">UEFA Champions League</option>
-                    <option value="Europa League">UEFA Europa League</option>
-                    <option value="Saudi Pro League">Saudi Pro League (Arabia Saudí)</option>
-                    <option value="MLS">MLS (Estados Unidos)</option>
-                    <option value="Primeira Liga">Primeira Liga (Portugal)</option>
-                    <option value="Eredivisie">Eredivisie (Países Bajos)</option>
-                    <option value="Liga Argentina">Liga Profesional (Argentina)</option>
-                    <option value="Mundial">Mundial FIFA</option>
-                    <option value="Eurocopa">UEFA Eurocopa</option>
-                    <option value="Copa América">Copa América</option>
-                </select>
-            </div>
-
-            <div class="field">
-                <label for="team">Equipo <span class="req">*</span></label>
-                <select id="team" required disabled>
-                    <option value="">Primero selecciona una competición</option>
-                </select>
-            </div>
-
-            <div class="field hidden" id="teamOtherWrap">
-                <label for="teamOther">Nombre del equipo <span class="req">*</span></label>
-                <input type="text" id="teamOther" placeholder="Escribe el nombre del equipo">
-            </div>
-
-            <div class="field">
-                <label for="season">Temporada / Año <span class="req">*</span></label>
-                <select id="season" required disabled>
-                    <option value="">Primero selecciona un equipo</option>
-                </select>
-            </div>
-
-            <div class="field">
-                <label for="color">Color o versión <span class="req">*</span></label>
-                <input type="text" id="color" placeholder="Ej: Blanca, Roja, Alternativa, 3ª equipación…" required>
-            </div>
-
-            <div class="field">
-                <label>Foto de referencia <span class="req">*</span></label>
-                <div class="upload-area" id="uploadArea">
-                    <input type="file" id="photoInput" accept="image/*">
-                    <div class="upload-placeholder" id="uploadPlaceholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-                            <polyline points="21 15 16 10 5 21"/>
-                        </svg>
-                        <p>Toca para seleccionar imagen</p>
-                        <p class="upload-hint">o arrastra aquí desde el ordenador</p>
-                    </div>
-                    <div class="upload-preview hidden" id="uploadPreview">
-                        <img id="previewImg" src="" alt="Vista previa">
-                        <button type="button" class="btn-remove" id="removePhoto">Quitar imagen</button>
-                    </div>
-                </div>
-            </div>
+            <button type="button" class="btn-add-shirt" id="addShirtBtn">+ Añadir otra camiseta</button>
 
             <hr class="divider">
-
-            <!-- ── PERSONALIZACIÓN ── -->
-            <p class="section-label">Personalización</p>
-
-            <div class="field">
-                <label for="size">Talla <span class="req">*</span></label>
-                <select id="size" required>
-                    <option value="">Selecciona tu talla</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                    <option value="Otra">Otra</option>
-                </select>
-            </div>
-
-            <div class="field hidden" id="sizeOtherWrap">
-                <label for="sizeOther">Especifica tu talla <span class="req">*</span></label>
-                <input type="text" id="sizeOther" placeholder="Escribe tu talla">
-            </div>
-
-            <div class="field">
-                <label>¿Quieres parche? <span class="opt">(opcional)</span></label>
-                <div class="radio-row">
-                    <label class="radio-opt">
-                        <input type="radio" name="patch" value="No" checked> No
-                    </label>
-                    <label class="radio-opt">
-                        <input type="radio" name="patch" value="Sí"> Sí
-                    </label>
-                </div>
-            </div>
-
-            <div class="field hidden" id="patchDescWrap">
-                <label for="patchDesc">Describe el parche <span class="opt">(opcional)</span></label>
-                <input type="text" id="patchDesc" placeholder="Ej: Parche campeón de Liga, parche UEFA, escudo bordado…">
-            </div>
-
-            <div class="field">
-                <label for="playerName">Nombre en la camiseta <span class="opt">(opcional)</span></label>
-                <input type="text" id="playerName" placeholder="Ej: GARCÍA, MESSI…">
-            </div>
-
-            <div class="field">
-                <label for="playerNumber">Número en la camiseta <span class="opt">(opcional)</span></label>
-                <input type="number" id="playerNumber" placeholder="Ej: 10" min="1" max="99">
-            </div>
-
-            <hr class="divider">
-
-            <!-- ── TUS DATOS ── -->
             <p class="section-label">Tus datos</p>
 
             <div class="field">
                 <label for="buyerName">Tu nombre <span class="req">*</span></label>
-                <input type="text" id="buyerName" placeholder="Nombre y apellidos" required>
+                <input type="text" id="buyerName" placeholder="Nombre y apellidos">
             </div>
 
             <div class="field">
                 <label for="buyerPhone">Tu teléfono <span class="req">*</span></label>
-                <input type="tel" id="buyerPhone" placeholder="Ej: 612 345 678" required>
+                <input type="tel" id="buyerPhone" placeholder="Ej: 612 345 678">
             </div>
 
             <div class="form-error" id="formError"></div>
@@ -415,7 +207,6 @@
         </form>
     </div>
 
-    <!-- CONFIRMACIÓN -->
     <div class="success-view" id="successView">
         <div class="success-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -427,86 +218,305 @@
     </div>
 
 </div>
-
 <script>
-// ─── CONFIGURACIÓN TELEGRAM ───────────────────────────────────────────────
+// ─── CONFIGURACIÓN ────────────────────────────────────────────────────────
 const TELEGRAM_TOKEN   = '8942529854:AAHVxlXK0HnU9RsZcpsvOOkMm0pzU0-gPtQ';
 const TELEGRAM_CHAT_ID = '-5169928520';
-// ──────────────────────────────────────────────────────────────────────────
 
 // ─── DATOS ────────────────────────────────────────────────────────────────
 function clubSeasons() {
     const s = [];
-    for (let y = 2025; y >= 2000; y--) {
-        s.push(`${y}/${String(y + 1).slice(-2)}`);
-    }
+    for (let y = 2025; y >= 2000; y--) s.push(`${y}/${String(y + 1).slice(-2)}`);
     return s;
 }
 
 const DATA = {
-    'La Liga': {
-        teams: ['Real Madrid','FC Barcelona','Atlético de Madrid','Sevilla FC','Valencia CF','Athletic Club','Real Sociedad','Villarreal CF','Real Betis','Osasuna','Celta de Vigo','RCD Espanyol','Getafe CF','Girona FC','Rayo Vallecano','Deportivo Alavés','Málaga CF','Deportivo de La Coruña','Levante UD','Elche CF','Cádiz CF','Granada CF','UD Almería','CD Leganés','UD Las Palmas','Real Valladolid','Eibar','Sporting de Gijón','Real Zaragoza','Otros'],
-        seasons: clubSeasons()
-    },
-    'Premier League': {
-        teams: ['Manchester City','Arsenal','Liverpool','Chelsea','Manchester United','Tottenham Hotspur','Newcastle United','Aston Villa','Brighton & Hove Albion','West Ham United','Crystal Palace','Brentford','Fulham','Wolverhampton Wanderers','Everton','Leicester City','Nottingham Forest','Southampton','Luton Town','Burnley','Sheffield United','Ipswich Town','Leeds United','Sunderland','Middlesbrough','Blackburn Rovers','Bolton Wanderers','Otros'],
-        seasons: clubSeasons()
-    },
-    'Serie A': {
-        teams: ['Inter Milan','AC Milan','Juventus','SSC Napoli','AS Roma','SS Lazio','Atalanta','ACF Fiorentina','Torino FC','Bologna FC','Udinese Calcio','AC Monza','Empoli FC','US Lecce','Frosinone Calcio','Genoa CFC','Cagliari Calcio','Hellas Verona','Sampdoria','Parma Calcio','Otros'],
-        seasons: clubSeasons()
-    },
-    'Bundesliga': {
-        teams: ['Bayern München','Borussia Dortmund','Bayer Leverkusen','RB Leipzig','Eintracht Frankfurt','VfB Stuttgart','SC Freiburg','Union Berlin','VfL Wolfsburg','Borussia Mönchengladbach','TSG Hoffenheim','FSV Mainz 05','FC Augsburg','Werder Bremen','FC Köln','VfL Bochum','FC Schalke 04','Hamburger SV','Otros'],
-        seasons: clubSeasons()
-    },
-    'Ligue 1': {
-        teams: ['Paris Saint-Germain','AS Monaco','OGC Nice','RC Lens','LOSC Lille','Olympique de Marseille','Olympique Lyonnais','Stade Rennais','RC Strasbourg','Stade de Reims','Montpellier HSC','Toulouse FC','FC Lorient','FC Nantes','Stade Brestois','FC Metz','Girondins de Bordeaux','Saint-Étienne','Otros'],
-        seasons: clubSeasons()
-    },
-    'Champions League': {
-        teams: ['Real Madrid','FC Barcelona','Liverpool','Bayern München','Manchester City','Chelsea','Arsenal','Juventus','Atlético de Madrid','Inter Milan','AC Milan','Borussia Dortmund','Paris Saint-Germain','Ajax','FC Porto','SL Benfica','Sporting CP','Manchester United','Tottenham Hotspur','AS Roma','SSC Napoli','Villarreal CF','Valencia CF','Club Brugge','Red Bull Salzburg','Celtic','Shakhtar Donetsk','Olympique de Marseille','Sevilla FC','Atalanta','Otros'],
-        seasons: clubSeasons()
-    },
-    'Europa League': {
-        teams: ['Sevilla FC','Atlético de Madrid','Manchester United','Chelsea','Arsenal','Inter Milan','AC Milan','Juventus','FC Porto','SL Benfica','Sporting CP','Ajax','PSV Eindhoven','Real Betis','Villarreal CF','Atalanta','ACF Fiorentina','AS Roma','Bayer Leverkusen','Eintracht Frankfurt','Olympique de Marseille','Otros'],
-        seasons: clubSeasons()
-    },
-    'Saudi Pro League': {
-        teams: ['Al-Nassr','Al-Hilal','Al-Ittihad','Al-Ahli','Al-Ettifaq','Al-Shabab','Al-Qadsiah','Al-Fayha','Al-Fateh','Al-Riyadh','Al-Hazm','Al-Khaleej','Al-Wehda','Damac FC','Al-Tai','Abha Club','Otros'],
-        seasons: clubSeasons()
-    },
-    'MLS': {
-        teams: ['Inter Miami CF','LA Galaxy','LAFC','Seattle Sounders FC','Portland Timbers','New York City FC','New York Red Bulls','Atlanta United FC','Columbus Crew','Philadelphia Union','Toronto FC','CF Montréal','New England Revolution','D.C. United','Chicago Fire FC','Real Salt Lake','Colorado Rapids','FC Dallas','Houston Dynamo','Austin FC','Nashville SC','Charlotte FC','St. Louis City SC','San Jose Earthquakes','Sporting Kansas City','Minnesota United FC','Vancouver Whitecaps','Orlando City SC','Otros'],
-        seasons: clubSeasons()
-    },
-    'Primeira Liga': {
-        teams: ['FC Porto','SL Benfica','Sporting CP','SC Braga','Vitória de Guimarães','Boavista FC','Estoril Praia','Gil Vicente','FC Famalicão','Arouca FC','Paços de Ferreira','Moreirense','Casa Pia AC','GD Chaves','Rio Ave FC','Portimonense SC','CD Santa Clara','Otros'],
-        seasons: clubSeasons()
-    },
-    'Eredivisie': {
-        teams: ['Ajax','PSV Eindhoven','Feyenoord','AZ Alkmaar','FC Utrecht','Vitesse','FC Twente','SC Heerenveen','FC Groningen','NEC Nijmegen','Go Ahead Eagles','Excelsior','SC Cambuur','Almere City FC','RKC Waalwijk','Fortuna Sittard','Sparta Rotterdam','Otros'],
-        seasons: clubSeasons()
-    },
-    'Liga Argentina': {
-        teams: ['Boca Juniors','River Plate','Racing Club','Independiente','San Lorenzo','Vélez Sársfield','Estudiantes de La Plata','Club Atlético Lanús','Banfield','Huracán','Gimnasia y Esgrima LP','Newell\'s Old Boys','Rosario Central','Talleres de Córdoba','Belgrano','Colón de Santa Fe','Defensa y Justicia','Godoy Cruz','Platense','Otros'],
-        seasons: clubSeasons()
-    },
-    'Mundial': {
-        teams: ['Argentina','Brasil','Francia','Alemania','España','Italia','Inglaterra','Portugal','Países Bajos','Bélgica','Croacia','Uruguay','México','Estados Unidos','Colombia','Chile','Senegal','Marruecos','Japón','Corea del Sur','Australia','Polonia','Dinamarca','Suecia','Suiza','Serbia','Camerún','Ghana','Ecuador','Catar','Arabia Saudí','Irán','Túnez','Costa Rica','Canadá','Gales','Otros'],
-        seasons: ['2026','2022','2018','2014','2010','2006','2002']
-    },
-    'Eurocopa': {
-        teams: ['Alemania','España','Francia','Italia','Inglaterra','Portugal','Países Bajos','Bélgica','Croacia','Suiza','Dinamarca','Austria','Polonia','Hungría','Escocia','República Checa','Turquía','Rumanía','Eslovaquia','Ucrania','Albania','Eslovenia','Georgia','Serbia','Otros'],
-        seasons: ['2024','2021','2016','2012','2008','2004','2000']
-    },
-    'Copa América': {
-        teams: ['Argentina','Brasil','Uruguay','Chile','Colombia','Venezuela','Paraguay','Ecuador','Perú','Bolivia','Panamá','Costa Rica','Estados Unidos','México','Jamaica','Canadá','Otros'],
-        seasons: ['2024','2021','2019','2016','2015','2011','2007','2004','2001']
-    }
+    'La Liga':         { teams: ['Real Madrid','FC Barcelona','Atlético de Madrid','Sevilla FC','Valencia CF','Athletic Club','Real Sociedad','Villarreal CF','Real Betis','Osasuna','Celta de Vigo','RCD Espanyol','Getafe CF','Girona FC','Rayo Vallecano','Deportivo Alavés','Málaga CF','Deportivo de La Coruña','Levante UD','Elche CF','Cádiz CF','Granada CF','UD Almería','CD Leganés','UD Las Palmas','Real Valladolid','Eibar','Sporting de Gijón','Real Zaragoza','Otros'], seasons: clubSeasons() },
+    'Premier League':  { teams: ['Manchester City','Arsenal','Liverpool','Chelsea','Manchester United','Tottenham Hotspur','Newcastle United','Aston Villa','Brighton & Hove Albion','West Ham United','Crystal Palace','Brentford','Fulham','Wolverhampton Wanderers','Everton','Leicester City','Nottingham Forest','Southampton','Luton Town','Burnley','Sheffield United','Ipswich Town','Leeds United','Sunderland','Middlesbrough','Blackburn Rovers','Bolton Wanderers','Otros'], seasons: clubSeasons() },
+    'Serie A':         { teams: ['Inter Milan','AC Milan','Juventus','SSC Napoli','AS Roma','SS Lazio','Atalanta','ACF Fiorentina','Torino FC','Bologna FC','Udinese Calcio','AC Monza','Empoli FC','US Lecce','Frosinone Calcio','Genoa CFC','Cagliari Calcio','Hellas Verona','Sampdoria','Parma Calcio','Otros'], seasons: clubSeasons() },
+    'Bundesliga':      { teams: ['Bayern München','Borussia Dortmund','Bayer Leverkusen','RB Leipzig','Eintracht Frankfurt','VfB Stuttgart','SC Freiburg','Union Berlin','VfL Wolfsburg','Borussia Mönchengladbach','TSG Hoffenheim','FSV Mainz 05','FC Augsburg','Werder Bremen','FC Köln','VfL Bochum','FC Schalke 04','Hamburger SV','Otros'], seasons: clubSeasons() },
+    'Ligue 1':         { teams: ['Paris Saint-Germain','AS Monaco','OGC Nice','RC Lens','LOSC Lille','Olympique de Marseille','Olympique Lyonnais','Stade Rennais','RC Strasbourg','Stade de Reims','Montpellier HSC','Toulouse FC','FC Lorient','FC Nantes','Stade Brestois','FC Metz','Girondins de Bordeaux','Saint-Étienne','Otros'], seasons: clubSeasons() },
+    'Champions League':{ teams: ['Real Madrid','FC Barcelona','Liverpool','Bayern München','Manchester City','Chelsea','Arsenal','Juventus','Atlético de Madrid','Inter Milan','AC Milan','Borussia Dortmund','Paris Saint-Germain','Ajax','FC Porto','SL Benfica','Sporting CP','Manchester United','Tottenham Hotspur','AS Roma','SSC Napoli','Villarreal CF','Valencia CF','Club Brugge','Red Bull Salzburg','Celtic','Shakhtar Donetsk','Olympique de Marseille','Sevilla FC','Atalanta','Otros'], seasons: clubSeasons() },
+    'Europa League':   { teams: ['Sevilla FC','Atlético de Madrid','Manchester United','Chelsea','Arsenal','Inter Milan','AC Milan','Juventus','FC Porto','SL Benfica','Sporting CP','Ajax','PSV Eindhoven','Real Betis','Villarreal CF','Atalanta','ACF Fiorentina','AS Roma','Bayer Leverkusen','Eintracht Frankfurt','Olympique de Marseille','Otros'], seasons: clubSeasons() },
+    'Saudi Pro League':{ teams: ['Al-Nassr','Al-Hilal','Al-Ittihad','Al-Ahli','Al-Ettifaq','Al-Shabab','Al-Qadsiah','Al-Fayha','Al-Fateh','Al-Riyadh','Al-Hazm','Al-Khaleej','Al-Wehda','Damac FC','Al-Tai','Abha Club','Otros'], seasons: clubSeasons() },
+    'MLS':             { teams: ['Inter Miami CF','LA Galaxy','LAFC','Seattle Sounders FC','Portland Timbers','New York City FC','New York Red Bulls','Atlanta United FC','Columbus Crew','Philadelphia Union','Toronto FC','CF Montréal','New England Revolution','D.C. United','Chicago Fire FC','Real Salt Lake','Colorado Rapids','FC Dallas','Houston Dynamo','Austin FC','Nashville SC','Charlotte FC','St. Louis City SC','San Jose Earthquakes','Sporting Kansas City','Minnesota United FC','Vancouver Whitecaps','Orlando City SC','Otros'], seasons: clubSeasons() },
+    'Primeira Liga':   { teams: ['FC Porto','SL Benfica','Sporting CP','SC Braga','Vitória de Guimarães','Boavista FC','Estoril Praia','Gil Vicente','FC Famalicão','Arouca FC','Paços de Ferreira','Moreirense','Casa Pia AC','GD Chaves','Rio Ave FC','Portimonense SC','CD Santa Clara','Otros'], seasons: clubSeasons() },
+    'Eredivisie':      { teams: ['Ajax','PSV Eindhoven','Feyenoord','AZ Alkmaar','FC Utrecht','Vitesse','FC Twente','SC Heerenveen','FC Groningen','NEC Nijmegen','Go Ahead Eagles','Excelsior','SC Cambuur','Almere City FC','RKC Waalwijk','Fortuna Sittard','Sparta Rotterdam','Otros'], seasons: clubSeasons() },
+    'Liga Argentina':  { teams: ['Boca Juniors','River Plate','Racing Club','Independiente','San Lorenzo','Vélez Sársfield','Estudiantes de La Plata','Club Atlético Lanús','Banfield','Huracán','Gimnasia y Esgrima LP','Newell\'s Old Boys','Rosario Central','Talleres de Córdoba','Belgrano','Colón de Santa Fe','Defensa y Justicia','Godoy Cruz','Platense','Otros'], seasons: clubSeasons() },
+    'Mundial':         { teams: ['Argentina','Brasil','Francia','Alemania','España','Italia','Inglaterra','Portugal','Países Bajos','Bélgica','Croacia','Uruguay','México','Estados Unidos','Colombia','Chile','Senegal','Marruecos','Japón','Corea del Sur','Australia','Polonia','Dinamarca','Suecia','Suiza','Serbia','Camerún','Ghana','Ecuador','Catar','Arabia Saudí','Irán','Túnez','Costa Rica','Canadá','Gales','Otros'], seasons: ['2026','2022','2018','2014','2010','2006','2002'] },
+    'Eurocopa':        { teams: ['Alemania','España','Francia','Italia','Inglaterra','Portugal','Países Bajos','Bélgica','Croacia','Suiza','Dinamarca','Austria','Polonia','Hungría','Escocia','República Checa','Turquía','Rumanía','Eslovaquia','Ucrania','Albania','Eslovenia','Georgia','Serbia','Otros'], seasons: ['2024','2021','2016','2012','2008','2004','2000'] },
+    'Copa América':    { teams: ['Argentina','Brasil','Uruguay','Chile','Colombia','Venezuela','Paraguay','Ecuador','Perú','Bolivia','Panamá','Costa Rica','Estados Unidos','México','Jamaica','Canadá','Otros'], seasons: ['2024','2021','2019','2016','2015','2011','2007','2004','2001'] }
 };
 
-// ─── IMAGEN ───────────────────────────────────────────────────────────────
+const COMPETITIONS = [
+    ['La Liga','La Liga (España)'],['Premier League','Premier League (Inglaterra)'],
+    ['Serie A','Serie A (Italia)'],['Bundesliga','Bundesliga (Alemania)'],
+    ['Ligue 1','Ligue 1 (Francia)'],['Champions League','UEFA Champions League'],
+    ['Europa League','UEFA Europa League'],['Saudi Pro League','Saudi Pro League (Arabia Saudí)'],
+    ['MLS','MLS (Estados Unidos)'],['Primeira Liga','Primeira Liga (Portugal)'],
+    ['Eredivisie','Eredivisie (Países Bajos)'],['Liga Argentina','Liga Profesional (Argentina)'],
+    ['Mundial','Mundial FIFA'],['Eurocopa','UEFA Eurocopa'],['Copa América','Copa América']
+];
+
+// ─── BLOQUE DE CAMISETA ───────────────────────────────────────────────────
+let shirtIdCounter = 0;
+
+function competitionOptionsHTML() {
+    return '<option value="">Selecciona una competición</option>' +
+        COMPETITIONS.map(([v, l]) => `<option value="${v}">${l}</option>`).join('');
+}
+
+function sizeOptionsHTML() {
+    return '<option value="">Selecciona tu talla</option>' +
+        ['XS','S','M','L','XL','XXL','Otra'].map(s => `<option value="${s}">${s}</option>`).join('');
+}
+
+function createShirtBlock() {
+    shirtIdCounter++;
+    const id = shirtIdCounter;
+    const block = document.createElement('div');
+    block.className = 'shirt-block';
+    block.dataset.shirtId = id;
+
+    block.innerHTML = `
+        <div class="shirt-header">
+            <span class="shirt-number"></span>
+            <button type="button" class="btn-remove-shirt">Eliminar camiseta</button>
+        </div>
+
+        <div class="field">
+            <label>Competición <span class="req">*</span></label>
+            <select class="sel-competition">${competitionOptionsHTML()}</select>
+        </div>
+
+        <div class="field">
+            <label>Equipo <span class="req">*</span></label>
+            <select class="sel-team" disabled><option value="">Primero selecciona una competición</option></select>
+        </div>
+
+        <div class="field hidden team-other-wrap">
+            <label>Nombre del equipo <span class="req">*</span></label>
+            <input type="text" class="inp-team-other" placeholder="Escribe el nombre del equipo">
+        </div>
+
+        <div class="field">
+            <label>Temporada / Año <span class="req">*</span></label>
+            <select class="sel-season" disabled><option value="">Primero selecciona un equipo</option></select>
+        </div>
+
+        <div class="field">
+            <label>Color o versión <span class="req">*</span></label>
+            <input type="text" class="inp-color" placeholder="Ej: Blanca, Roja, Alternativa, 3ª equipación…">
+        </div>
+
+        <div class="field">
+            <label>Foto de referencia <span class="req">*</span></label>
+            <div class="upload-area">
+                <input type="file" class="inp-photo" accept="image/*">
+                <div class="upload-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                    <p>Toca para seleccionar imagen</p>
+                    <p class="upload-hint">o arrastra aquí desde el ordenador</p>
+                </div>
+                <div class="upload-preview hidden">
+                    <img class="preview-img" src="" alt="Vista previa">
+                    <button type="button" class="btn-remove-photo">Quitar imagen</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Talla <span class="req">*</span></label>
+            <select class="sel-size">${sizeOptionsHTML()}</select>
+        </div>
+
+        <div class="field hidden size-other-wrap">
+            <label>Especifica tu talla <span class="req">*</span></label>
+            <input type="text" class="inp-size-other" placeholder="Escribe tu talla">
+        </div>
+
+        <div class="field">
+            <label>¿Quieres parche? <span class="opt">(opcional)</span></label>
+            <div class="radio-row">
+                <label class="radio-opt"><input type="radio" name="patch_${id}" value="No" checked> No</label>
+                <label class="radio-opt"><input type="radio" name="patch_${id}" value="Sí"> Sí</label>
+            </div>
+            <div class="field hidden patch-desc-wrap" style="margin-bottom:0;margin-top:14px;">
+                <label>Describe el parche <span class="opt">(opcional)</span></label>
+                <input type="text" class="inp-patch-desc" placeholder="Ej: Parche campeón de Liga, escudo bordado…">
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Nombre en la camiseta <span class="opt">(opcional)</span></label>
+            <input type="text" class="inp-player-name" placeholder="Ej: GARCÍA, MESSI…">
+        </div>
+
+        <div class="field" style="margin-bottom:0">
+            <label>Número en la camiseta <span class="opt">(opcional)</span></label>
+            <input type="number" class="inp-player-number" placeholder="Ej: 10" min="1" max="99">
+        </div>
+    `;
+
+    attachListeners(block, id);
+    return block;
+}
+
+function attachListeners(block, id) {
+    const selComp       = block.querySelector('.sel-competition');
+    const selTeam       = block.querySelector('.sel-team');
+    const teamOtherWrap = block.querySelector('.team-other-wrap');
+    const inpTeamOther  = block.querySelector('.inp-team-other');
+    const selSeason     = block.querySelector('.sel-season');
+    const selSize       = block.querySelector('.sel-size');
+    const sizeOtherWrap = block.querySelector('.size-other-wrap');
+    const patchDescWrap = block.querySelector('.patch-desc-wrap');
+    const inpPhoto      = block.querySelector('.inp-photo');
+    const placeholder   = block.querySelector('.upload-placeholder');
+    const preview       = block.querySelector('.upload-preview');
+    const previewImg    = block.querySelector('.preview-img');
+
+    selComp.addEventListener('change', function () {
+        const comp = this.value;
+        selTeam.innerHTML = '<option value="">Selecciona un equipo</option>';
+        selTeam.disabled = true;
+        teamOtherWrap.classList.add('hidden');
+        inpTeamOther.value = '';
+        selSeason.innerHTML = '<option value="">Primero selecciona un equipo</option>';
+        selSeason.disabled = true;
+        if (comp && DATA[comp]) {
+            DATA[comp].teams.forEach(t => {
+                const o = document.createElement('option'); o.value = t; o.textContent = t;
+                selTeam.appendChild(o);
+            });
+            selTeam.disabled = false;
+        }
+    });
+
+    selTeam.addEventListener('change', function () {
+        const comp = selComp.value, team = this.value;
+        teamOtherWrap.classList.toggle('hidden', team !== 'Otros');
+        if (team !== 'Otros') inpTeamOther.value = '';
+        selSeason.innerHTML = '<option value="">Selecciona temporada / año</option>';
+        selSeason.disabled = true;
+        if (team && comp && DATA[comp]) {
+            DATA[comp].seasons.forEach(s => {
+                const o = document.createElement('option'); o.value = s; o.textContent = s;
+                selSeason.appendChild(o);
+            });
+            selSeason.disabled = false;
+        }
+    });
+
+    selSize.addEventListener('change', function () {
+        sizeOtherWrap.classList.toggle('hidden', this.value !== 'Otra');
+        if (this.value !== 'Otra') sizeOtherWrap.querySelector('.inp-size-other').value = '';
+    });
+
+    block.querySelectorAll(`input[name="patch_${id}"]`).forEach(r => {
+        r.addEventListener('change', function () {
+            patchDescWrap.classList.toggle('hidden', this.value !== 'Sí');
+            if (this.value !== 'Sí') block.querySelector('.inp-patch-desc').value = '';
+        });
+    });
+
+    inpPhoto.addEventListener('change', function () {
+        const file = this.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = e => {
+            previewImg.src = e.target.result;
+            placeholder.classList.add('hidden');
+            preview.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+    });
+
+    block.querySelector('.btn-remove-photo').addEventListener('click', function (e) {
+        e.stopPropagation();
+        inpPhoto.value = ''; previewImg.src = '';
+        preview.classList.add('hidden');
+        placeholder.classList.remove('hidden');
+    });
+
+    block.querySelector('.btn-remove-shirt').addEventListener('click', function () {
+        block.remove();
+        refreshShirts();
+    });
+}
+
+function refreshShirts() {
+    const blocks = document.querySelectorAll('.shirt-block');
+    blocks.forEach((b, i) => {
+        b.querySelector('.shirt-number').textContent = `Camiseta ${i + 1}`;
+        b.querySelector('.btn-remove-shirt').style.display = blocks.length > 1 ? '' : 'none';
+    });
+}
+
+// ─── INICIALIZACIÓN ───────────────────────────────────────────────────────
+const container = document.getElementById('shirtsContainer');
+container.appendChild(createShirtBlock());
+refreshShirts();
+
+document.getElementById('addShirtBtn').addEventListener('click', function () {
+    const block = createShirtBlock();
+    container.appendChild(block);
+    refreshShirts();
+    block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+// ─── VALIDACIÓN ───────────────────────────────────────────────────────────
+function validateShirts() {
+    const errors = [];
+    document.querySelectorAll('.shirt-block').forEach((block, i) => {
+        const n         = i + 1;
+        const id        = block.dataset.shirtId;
+        const comp      = block.querySelector('.sel-competition').value;
+        const team      = block.querySelector('.sel-team').value;
+        const teamOther = block.querySelector('.inp-team-other').value.trim();
+        const season    = block.querySelector('.sel-season').value;
+        const color     = block.querySelector('.inp-color').value.trim();
+        const size      = block.querySelector('.sel-size').value;
+        const sizeOther = block.querySelector('.inp-size-other').value.trim();
+        const photo     = block.querySelector('.inp-photo').files[0];
+
+        if (!comp)                           errors.push(`Camiseta ${n}: falta la competición`);
+        if (!team)                           errors.push(`Camiseta ${n}: falta el equipo`);
+        if (team === 'Otros' && !teamOther)  errors.push(`Camiseta ${n}: falta el nombre del equipo`);
+        if (!season)                         errors.push(`Camiseta ${n}: falta la temporada / año`);
+        if (!color)                          errors.push(`Camiseta ${n}: falta el color o versión`);
+        if (!size)                           errors.push(`Camiseta ${n}: falta la talla`);
+        if (size === 'Otra' && !sizeOther)   errors.push(`Camiseta ${n}: falta especificar la talla`);
+        if (!photo)                          errors.push(`Camiseta ${n}: falta la foto de referencia`);
+    });
+    return errors;
+}
+
+function collectShirt(block, i) {
+    const id     = block.dataset.shirtId;
+    const team   = block.querySelector('.sel-team').value;
+    const size   = block.querySelector('.sel-size').value;
+    const patch  = block.querySelector(`input[name="patch_${id}"]:checked`)?.value || 'No';
+    return {
+        n:          i + 1,
+        comp:       block.querySelector('.sel-competition').value,
+        team:       team === 'Otros' ? block.querySelector('.inp-team-other').value.trim() : team,
+        season:     block.querySelector('.sel-season').value,
+        color:      block.querySelector('.inp-color').value.trim(),
+        size:       size === 'Otra' ? block.querySelector('.inp-size-other').value.trim() : size,
+        patch,
+        patchDesc:  block.querySelector('.inp-patch-desc').value.trim() || '—',
+        playerName: block.querySelector('.inp-player-name').value.trim() || '—',
+        playerNum:  block.querySelector('.inp-player-number').value.trim() || '—',
+        photo:      block.querySelector('.inp-photo').files[0]
+    };
+}
+
+// ─── COMPRESIÓN DE IMAGEN ─────────────────────────────────────────────────
 function compressImage(file) {
     return new Promise(resolve => {
         const reader = new FileReader();
@@ -527,219 +537,82 @@ function compressImage(file) {
     });
 }
 
-// ─── ELEMENTOS ────────────────────────────────────────────────────────────
-const compEl       = document.getElementById('competition');
-const teamEl       = document.getElementById('team');
-const teamOtherEl  = document.getElementById('teamOther');
-const teamOtherWrap= document.getElementById('teamOtherWrap');
-const seasonEl     = document.getElementById('season');
-const colorEl      = document.getElementById('color');
-const sizeEl       = document.getElementById('size');
-const sizeOtherEl  = document.getElementById('sizeOther');
-const sizeOtherWrap= document.getElementById('sizeOtherWrap');
-const patchDescEl  = document.getElementById('patchDesc');
-const patchDescWrap= document.getElementById('patchDescWrap');
-const playerNameEl = document.getElementById('playerName');
-const playerNumEl  = document.getElementById('playerNumber');
-const buyerNameEl  = document.getElementById('buyerName');
-const buyerPhoneEl = document.getElementById('buyerPhone');
-const formErrorEl  = document.getElementById('formError');
-const submitBtn    = document.getElementById('submitBtn');
-
-// ─── FOTO ─────────────────────────────────────────────────────────────────
-const photoInput      = document.getElementById('photoInput');
-const uploadPlaceholder = document.getElementById('uploadPlaceholder');
-const uploadPreview   = document.getElementById('uploadPreview');
-const previewImg      = document.getElementById('previewImg');
-const removePhotoBtn  = document.getElementById('removePhoto');
-
-photoInput.addEventListener('change', function () {
-    const file = this.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = e => {
-        previewImg.src = e.target.result;
-        uploadPlaceholder.classList.add('hidden');
-        uploadPreview.classList.remove('hidden');
-    };
-    reader.readAsDataURL(file);
-});
-
-removePhotoBtn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    photoInput.value = '';
-    previewImg.src = '';
-    uploadPreview.classList.add('hidden');
-    uploadPlaceholder.classList.remove('hidden');
-});
-
-// ─── LÓGICA DE CASCADA ────────────────────────────────────────────────────
-compEl.addEventListener('change', function () {
-    const comp = this.value;
-
-    teamEl.innerHTML = '<option value="">Selecciona un equipo</option>';
-    teamEl.disabled = true;
-    teamOtherWrap.classList.add('hidden');
-    teamOtherEl.value = '';
-
-    seasonEl.innerHTML = '<option value="">Primero selecciona un equipo</option>';
-    seasonEl.disabled = true;
-
-    if (comp && DATA[comp]) {
-        DATA[comp].teams.forEach(t => {
-            const opt = document.createElement('option');
-            opt.value = t;
-            opt.textContent = t;
-            teamEl.appendChild(opt);
-        });
-        teamEl.disabled = false;
-    }
-});
-
-teamEl.addEventListener('change', function () {
-    const comp = compEl.value;
-    const team = this.value;
-
-    if (team === 'Otros') {
-        teamOtherWrap.classList.remove('hidden');
-    } else {
-        teamOtherWrap.classList.add('hidden');
-        teamOtherEl.value = '';
-    }
-
-    seasonEl.innerHTML = '<option value="">Selecciona temporada / año</option>';
-    seasonEl.disabled = true;
-
-    if (team && comp && DATA[comp]) {
-        DATA[comp].seasons.forEach(s => {
-            const opt = document.createElement('option');
-            opt.value = s;
-            opt.textContent = s;
-            seasonEl.appendChild(opt);
-        });
-        seasonEl.disabled = false;
-    }
-});
-
-sizeEl.addEventListener('change', function () {
-    if (this.value === 'Otra') {
-        sizeOtherWrap.classList.remove('hidden');
-    } else {
-        sizeOtherWrap.classList.add('hidden');
-        sizeOtherEl.value = '';
-    }
-});
-
-document.querySelectorAll('input[name="patch"]').forEach(r => {
-    r.addEventListener('change', function () {
-        if (this.value === 'Sí') {
-            patchDescWrap.classList.remove('hidden');
-        } else {
-            patchDescWrap.classList.add('hidden');
-            patchDescEl.value = '';
-        }
-    });
-});
-
 // ─── ENVÍO ────────────────────────────────────────────────────────────────
-document.getElementById('orderForm').addEventListener('submit', function (e) {
+document.getElementById('orderForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    formErrorEl.style.display = 'none';
+    const formError  = document.getElementById('formError');
+    const submitBtn  = document.getElementById('submitBtn');
+    const buyerName  = document.getElementById('buyerName').value.trim();
+    const buyerPhone = document.getElementById('buyerPhone').value.trim();
 
-    const comp      = compEl.value.trim();
-    const team      = teamEl.value.trim();
-    const teamOther = teamOtherEl.value.trim();
-    const season    = seasonEl.value.trim();
-    const color     = colorEl.value.trim();
-    const size      = sizeEl.value.trim();
-    const sizeOther = sizeOtherEl.value.trim();
-    const buyerName = buyerNameEl.value.trim();
-    const buyerPhone= buyerPhoneEl.value.trim();
+    formError.style.display = 'none';
 
-    const isTeamOther = team === 'Otros';
+    const errors = [];
+    if (!buyerName)  errors.push('Datos del comprador: falta tu nombre');
+    if (!buyerPhone) errors.push('Datos del comprador: falta tu teléfono');
+    errors.push(...validateShirts());
 
-    const missing = [];
-    if (!comp)                           missing.push('competición');
-    if (!team)                           missing.push('equipo');
-    if (isTeamOther && !teamOther)       missing.push('nombre del equipo');
-    if (!season)                         missing.push('temporada / año');
-    if (!color)                          missing.push('color o versión');
-    if (!size)                           missing.push('talla');
-    if (size === 'Otra' && !sizeOther)   missing.push('talla personalizada');
-    if (!buyerName)                      missing.push('tu nombre');
-    if (!buyerPhone)                     missing.push('tu teléfono');
-    if (!photoInput.files[0])            missing.push('foto de referencia');
-
-    if (missing.length > 0) {
-        formErrorEl.textContent = `Faltan campos obligatorios: ${missing.join(', ')}.`;
-        formErrorEl.style.display = 'block';
-        formErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (errors.length) {
+        formError.innerHTML = errors.map(err => `• ${err}`).join('<br>');
+        formError.style.display = 'block';
+        formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
     }
-
-    const patchChecked = document.querySelector('input[name="patch"]:checked');
-    const patchValue   = patchChecked ? patchChecked.value : 'No';
-    const patchDesc    = patchDescEl.value.trim() || '—';
-    const playerName   = playerNameEl.value.trim() || '—';
-    const playerNumber = playerNumEl.value.trim() || '—';
-    const finalTeam    = isTeamOther ? teamOther : team;
-    const finalSize    = size === 'Otra' ? sizeOther : size;
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando…';
 
+    const blocks = document.querySelectorAll('.shirt-block');
+    const shirts = Array.from(blocks).map((b, i) => collectShirt(b, i));
+    const total  = shirts.length;
+
+    const shirtLines = shirts.map(s =>
+        `<b>CAMISETA ${s.n}</b>\n` +
+        `Competición: ${s.comp}\n` +
+        `Equipo: ${s.team}\n` +
+        `Temporada: ${s.season}\n` +
+        `Color: ${s.color}\n` +
+        `Talla: ${s.size}\n` +
+        `Parche: ${s.patch}${s.patch === 'Sí' ? ' — ' + s.patchDesc : ''}\n` +
+        `Nombre: ${s.playerName}\n` +
+        `Número: ${s.playerNum}`
+    ).join('\n\n');
+
     const mensaje =
-`<b>NUEVO PEDIDO DE CAMISETA</b>
+        `<b>NUEVO PEDIDO — ${total} CAMISETA${total > 1 ? 'S' : ''}</b>\n\n` +
+        `<b>COMPRADOR</b>\nNombre: ${buyerName}\nTeléfono: ${buyerPhone}\n\n` +
+        shirtLines;
 
-<b>CAMISETA</b>
-Competición: ${comp}
-Equipo: ${finalTeam}
-Temporada: ${season}
-Color: ${color}
+    try {
+        const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: mensaje, parse_mode: 'HTML' })
+        }).then(r => r.json());
 
-<b>PERSONALIZACIÓN</b>
-Talla: ${finalSize}
-Parche: ${patchValue}${patchValue === 'Sí' ? '\nDesc. parche: ' + patchDesc : ''}
-Nombre en camiseta: ${playerName}
-Número en camiseta: ${playerNumber}
+        if (!res.ok) throw new Error(res.description);
 
-<b>COMPRADOR</b>
-Nombre: ${buyerName}
-Teléfono: ${buyerPhone}`;
-
-    const selectedFile = photoInput.files[0];
-
-    fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: mensaje, parse_mode: 'HTML' })
-    })
-    .then(r => r.json())
-    .then(async data => {
-        if (!data.ok) throw new Error(data.description);
-
-        if (selectedFile) {
-            const blob = await compressImage(selectedFile);
-            const fd = new FormData();
-            fd.append('chat_id', TELEGRAM_CHAT_ID);
-            fd.append('photo', blob, 'camiseta.jpg');
-            fd.append('caption', 'Foto de referencia del pedido');
-            await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto`, {
-                method: 'POST',
-                body: fd
-            });
+        for (const shirt of shirts) {
+            if (shirt.photo) {
+                const blob = await compressImage(shirt.photo);
+                const fd = new FormData();
+                fd.append('chat_id', TELEGRAM_CHAT_ID);
+                fd.append('photo', blob, `camiseta_${shirt.n}.jpg`);
+                fd.append('caption', `Foto — Camiseta ${shirt.n} (${shirt.team} ${shirt.season})`);
+                await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto`, { method: 'POST', body: fd });
+            }
         }
 
         document.getElementById('formView').style.display = 'none';
         document.getElementById('successView').style.display = 'block';
-    })
-    .catch(function (err) {
+
+    } catch (err) {
         console.error(err);
         submitBtn.disabled = false;
         submitBtn.textContent = 'Enviar pedido';
-        formErrorEl.textContent = 'Error al enviar el formulario. Por favor, inténtalo de nuevo.';
-        formErrorEl.style.display = 'block';
-    });
+        formError.textContent = 'Error al enviar el formulario. Por favor, inténtalo de nuevo.';
+        formError.style.display = 'block';
+    }
 });
 </script>
 </body>
